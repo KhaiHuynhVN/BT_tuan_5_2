@@ -110,7 +110,7 @@ function App() {
          : locationName.includes("Tỉnh")
          ? locationName.replace("Tỉnh ", "")
          : locationName;
-      const coordinatesAPI = `http://api.openweathermap.org/geo/1.0/direct?q="${formatName}"&limit=5&appid=${API_KEY}`;
+      const coordinatesAPI = `https://api.openweathermap.org/geo/1.0/direct?q="${formatName}"&limit=5&appid=${API_KEY}`;
 
       const { data } = await axios(coordinatesAPI);
 
