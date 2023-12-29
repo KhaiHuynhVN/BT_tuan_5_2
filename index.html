@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+      <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+      <script src="https://cdn.lordicon.com/lordicon.js"></script>
+
+      <link rel="stylesheet" href="./assets/fontawesome/css/all.min.css" />
+      <link rel="stylesheet" href="./style.css" />
+      <title>BT tuần 5 - Bài 2</title>
+   </head>
+   <body>
+      <div id="root">
+         <div class="wrapper">
+            <header class="header">
+               <div class="header-logo-wrapper">
+                  <div class="header-logo-container">
+                     <lord-icon
+                        class="header-logo"
+                        stroke="bold"
+                        colors="primary:#ff0f7b,secondary:#f89b29"
+                        src="./assets/animate-icon/rain-sunny.json"
+                        trigger="loop"
+                        state="loop-cycle"
+                        style="width: 120px; height: 120px"
+                     ></lord-icon>
+                     <lord-icon
+                        class="header-logo-shadow"
+                        stroke="bold"
+                        colors="primary:#ff0f7b,secondary:#f89b29"
+                        src="./assets/animate-icon/rain-sunny.json"
+                        trigger="loop"
+                        state="loop-cycle"
+                        style="width: 120px; height: 120px"
+                     ></lord-icon>
+                  </div>
+                  <div class="header-hero-wrapper">
+                     <h1 class="header-hero">MY</h1>
+                     <h2 class="header-sub-hero">
+                        Weather <br />
+                        App
+                     </h2>
+
+                     <div class="header-hero-wrapper__shadow">
+                        <h1 class="header-hero">MY</h1>
+                        <h2 class="header-sub-hero">
+                           Weather <br />
+                           App
+                        </h2>
+                     </div>
+                  </div>
+               </div>
+            </header>
+
+            <div class="content">
+               <div class="content-left">
+                  <div class="form-select-wrapper">
+                     <div class="select location">
+                        <div class="select-title">
+                           <span class="select-value" data-value="">Chọn tỉnh/thành</span>
+                           <i class="fa-sharp fa-solid fa-chevron-down"></i>
+                           <div class="wave-container">
+                              <div class="wave"></div>
+                              <div class="wave"></div>
+                              <div class="wave-bg"></div>
+                           </div>
+                        </div>
+                        <div class="select-option-wrapper">
+                           <div class="select-option-list"></div>
+                        </div>
+                     </div>
+                  </div>
+
+                  <div class="future-forecast-wrapper"><div class="future-forecast"></div></div>
+               </div>
+               <div class="content-right">
+                  <div class="weather-wrapper"></div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </body>
+   <script src="./main.js"></script>
+</html>
