@@ -4,7 +4,7 @@ const $$ = document.querySelectorAll.bind(document);
 function App() {
    const API_KEY = `60836d7502891317b3d0942b4f1d416b`;
    const locationsAPI = `https://provinces.open-api.vn/api/?depth=1`;
-
+   const BASE_API = `https://api.openweathermap.org`;
    const weatherWrapper = $(".weather-wrapper");
    const futureForecastEl = $(".future-forecast");
 
@@ -110,7 +110,7 @@ function App() {
          : locationName.includes("Tỉnh")
          ? locationName.replace("Tỉnh ", "")
          : locationName;
-      const coordinatesAPI = `https://api.openweathermap.org/geo/1.0/direct?q="${formatName}"&limit=5&appid=${API_KEY}`;
+      const coordinatesAPI = `${BASE_API}/geo/1.0/direct?q="${formatName}"&limit=5&appid=${API_KEY}`;
 
       const { data } = await axios(coordinatesAPI);
 
@@ -121,7 +121,7 @@ function App() {
       }
 
       const { lat, lon } = data[0];
-      const weathersAPI = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=metric&lang=vi&appid=${API_KEY}`;
+      const weathersAPI = `${BASE_API}/data/2.5/onecall?lat=${lat}&lon=${lon}&units=metric&lang=vi&appid=${API_KEY}`;
       const { data: weatherData } = await axios(weathersAPI);
 
       handleRenderWeather(weatherData, locationName);
