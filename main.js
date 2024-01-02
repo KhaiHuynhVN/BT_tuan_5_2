@@ -173,19 +173,19 @@ function App() {
             <div class="weather-content-body">
                <div class="weather-content-body__content">
                   <span>
-                     <lord-icon class="icon" stroke="bold" colors="primary:#fff,secondary:#fff" src="./assets/animate-icon/max-temp.json" trigger="loop" state="morph-hot" style="width: 30px; height: 30px"></lord-icon>
+                     <lord-icon class="icon" stroke="bold" colors="primary:#fff,secondary:#fff" src="./assets/animate-icon/max-temp.json" trigger="loop-on-hover" target=".weather-content-body__content span" state="morph-hot" style="width: 30px; height: 30px"></lord-icon>
                      Cao nhất: ${Math.round(currDateTemp.max)} &deg;C.
                   </span>
                   <span>
-                     <lord-icon class="icon" stroke="bold" colors="primary:#fff,secondary:#fff" src="./assets/animate-icon/min-temp.json" trigger="loop" state="morph-cold" style="width: 30px; height: 30px"></lord-icon> 
+                     <lord-icon class="icon" stroke="bold" colors="primary:#fff,secondary:#fff" src="./assets/animate-icon/min-temp.json" trigger="loop-on-hover" target=".weather-content-body__content span" state="morph-cold" style="width: 30px; height: 30px"></lord-icon> 
                      Thấp nhất: ${Math.round(currDateTemp.min)} &deg;C.
                   </span>
                   <span>
-                  <lord-icon class="icon" stroke="bold" colors="primary:#fff,secondary:#fff" src="./assets/animate-icon/feeling-temp.json" trigger="loop" state="hover-pinch" style="width: 30px; height: 30px"></lord-icon>
+                  <lord-icon class="icon" stroke="bold" colors="primary:#fff,secondary:#fff" src="./assets/animate-icon/feeling-temp.json" trigger="loop-on-hover" target=".weather-content-body__content span" state="hover-pinch" style="width: 30px; height: 30px"></lord-icon>
                      Cảm giác: ${Math.round(currfeelsLike)} &deg;C.
                   </span>
                   <span>
-                  <lord-icon class="icon" stroke="bold" colors="primary:#fff,secondary:#fff" src="./assets/animate-icon/cloud.json" trigger="loop" state="loop-cloud-2" style="width: 30px; height: 30px"></lord-icon> 
+                  <lord-icon class="icon" stroke="bold" colors="primary:#fff,secondary:#fff" src="./assets/animate-icon/cloud.json" trigger="loop-on-hover" target=".weather-content-body__content span" state="loop-cloud-2" style="width: 30px; height: 30px"></lord-icon> 
                      Mây: ${
                         currClouds <= 20
                            ? "Mây rải rác."
@@ -197,19 +197,19 @@ function App() {
                      }
                   </span>
                   <span>
-                     <lord-icon class="icon" stroke="bold" colors="primary:#fff,secondary:#fff" src="./assets/animate-icon/pressure.json" trigger="loop" state="loop-cycle" style="width: 30px; height: 30px"></lord-icon>
+                     <lord-icon class="icon" stroke="bold" colors="primary:#fff,secondary:#fff" src="./assets/animate-icon/pressure.json" trigger="loop-on-hover" target=".weather-content-body__content span" state="loop-cycle" style="width: 30px; height: 30px"></lord-icon>
                      Áp suất: ${currPressure} hPa.
                   </span>
                   <span>
-                     <lord-icon class="icon" stroke="bold" colors="primary:#fff,secondary:#fff" src="./assets/animate-icon/wind-speed.json" trigger="loop" state="hover-pinch" style="width: 30px; height: 30px"></lord-icon>
+                     <lord-icon class="icon" stroke="bold" colors="primary:#fff,secondary:#fff" src="./assets/animate-icon/wind-speed.json" trigger="loop-on-hover" target=".weather-content-body__content span" state="hover-pinch" style="width: 30px; height: 30px"></lord-icon>
                      Tốc độ gió: ${currWindSpeed} m/s.   
                   </span>
                   <span>
-                     <lord-icon class="icon" stroke="bold" colors="primary:#fff,secondary:#fff" src="./assets/animate-icon/humidity.json" trigger="loop" state="loop-cycle" style="width: 30px; height: 30px"></lord-icon>
+                     <lord-icon class="icon" stroke="bold" colors="primary:#fff,secondary:#fff" src="./assets/animate-icon/humidity.json" trigger="loop-on-hover" target=".weather-content-body__content span" state="loop-cycle" style="width: 30px; height: 30px"></lord-icon>
                      Độ ẩm: ${currHumidity} %.   
                   </span>
                   <span>
-                     <lord-icon class="icon" stroke="bold" colors="primary:#fff,secondary:#fff" src="./assets/animate-icon/sun.json" trigger="loop" state="hover-rays" style="width: 30px; height: 30px"></lord-icon>
+                     <lord-icon class="icon" stroke="bold" colors="primary:#fff,secondary:#fff" src="./assets/animate-icon/sun.json" trigger="loop-on-hover" target=".weather-content-body__content span" state="hover-rays" style="width: 30px; height: 30px"></lord-icon>
                      Tia UV: ${
                         currUVI <= 2
                            ? "Thấp"
@@ -223,7 +223,7 @@ function App() {
                      }.   
                   </span>
                   <span>
-                     <lord-icon class="icon" stroke="bold" colors="primary:#fff,secondary:#fff" src="./assets/animate-icon/telescope.json" trigger="loop" state="loop-cycle" style="width: 30px; height: 30px"></lord-icon>
+                     <lord-icon class="icon" stroke="bold" colors="primary:#fff,secondary:#fff" src="./assets/animate-icon/telescope.json" trigger="loop-on-hover" target=".weather-content-body__content span" state="loop-cycle" style="width: 30px; height: 30px"></lord-icon>
                      Tầm nhìn: ${currVisibility}m.   
                   </span>                                   
                </div>
@@ -268,7 +268,7 @@ function App() {
                            stroke="bold"
                            colors="primary:#fff,secondary:#fff"
                            src="./assets/animate-icon/temperature.json"
-                           trigger="loop"
+                           trigger="loop-on-hover" target=".future-forecast-item-wrapper"
                            state="loop-cycle"
                            style="width: 40px; height: 40px"
                         ></lord-icon>
