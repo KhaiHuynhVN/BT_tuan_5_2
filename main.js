@@ -56,7 +56,7 @@ function App() {
 
             options.forEach((selectItem) => {
                if (selectItem.contains(e.target)) {
-                  title.dataset.value = e.target.dataset.value;
+                  title.dataset.value = selectItem.dataset.value;
                   title.innerText = title.dataset.value;
                }
             });
