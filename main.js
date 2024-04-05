@@ -3,7 +3,7 @@ const $$ = document.querySelectorAll.bind(document);
 
 function App() {
    const API_KEY = `60836d7502891317b3d0942b4f1d416b`;
-   const locationsAPI = `https://provinces.open-api.vn/api/?depth=1`;
+   const locationsAPI = `https://vapi.vnappmob.com/api/province/`;
    const BASE_API = `https://api.openweathermap.org`;
    const weatherWrapper = $(".weather-wrapper");
    const futureForecastEl = $(".future-forecast");
@@ -83,11 +83,11 @@ function App() {
       const select = $(".select.location");
       const optionList = select.querySelector(".select-option-list");
 
-      console.log(datas.data);
+      // console.log(datas.data);
 
-      const htmls = datas.data?.map(
+      const htmls = datas.data.results?.map(
          (item) => `
-            <div data-value="${item.name}" class="select-option">${item.name}</div>
+            <div data-value="${item.province_name}" class="select-option">${item.province_name}</div>
          `,
       );
 
@@ -96,9 +96,10 @@ function App() {
       const options = select.querySelectorAll(".select-option");
 
       options.forEach((item) => {
-         item.onclick = (e) => {
+         item.onclick = async (e) => {
             handleOverlay("show");
-            handleGetWeather(e);
+            await handleGetWeather(e);
+            handleOverlay("hide");
          };
       });
    };
@@ -236,8 +237,6 @@ function App() {
          renderCurrTime();
       }, 1000);
 
-      handleOverlay("hide");
-
       const futureForecastHtmls = remainingDailyCopied.map((item) => {
          const { dt, weather, temp, wind_speed } = item;
          const date = new Date(dt * 1000);
@@ -321,6 +320,7 @@ function App() {
 
             if (weatherData) {
                handleRenderWeather(weatherData);
+               handleOverlay("hide");
             }
          } catch (error) {
             handleOverlay("hide");
